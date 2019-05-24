@@ -17,11 +17,42 @@
 .stepContainer {
   height: 450px;
   width: 800px;
+  max-width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   border-radius: 10px;    
   padding: 40px;
+}
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+
+  &Ques {
+    h1 {
+      font-size: 48px;
+      font-weight: 200;
+    }
+  }
+}
+
+.stepForm {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 0;
+
+  .stepButtons {
+    margin: 40px 0 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+  }
 }
 .stepOne {
   display: flex;
@@ -30,6 +61,12 @@
   background-position: top left, top right, bottom right;
   background-size: 70% auto, 70% auto, 70% auto;
   background-repeat: no-repeat;
+
+  .stepButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   h1 {
     font-size: 38px;
@@ -43,9 +80,4 @@
     font-size: 22px;
     font-weight: 200;
   }
-}
-
-.stepButtons {
-  display: flex;
-  justify-content: center;
 }

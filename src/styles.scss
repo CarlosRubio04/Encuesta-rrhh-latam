@@ -14,3 +14,12 @@ body {
 .mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover {
   background-color: transparent !important;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-radio-group {
+  display: flex;
+  justify-content: center;
+}
