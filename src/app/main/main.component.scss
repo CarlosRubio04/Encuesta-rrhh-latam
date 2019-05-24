@@ -1,0 +1,51 @@
+
+.Main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  &Container {
+    width: 100%;
+    background-color: #F8F8F8;
+  }
+}
+.stepContainer {
+  height: 450px;
+  width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 10px;    
+  padding: 40px;
+}
+.stepOne {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../assets/welcome_tl.png), url(../../assets/welcome_tr.png), url(../../assets/welcome_br.png);
+  background-position: top left, top right, bottom right;
+  background-size: 70% auto, 70% auto, 70% auto;
+  background-repeat: no-repeat;
+
+  h1 {
+    font-size: 38px;
+    font-weight: 500;
+    color: #1f2c35;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 22px;
+    font-weight: 200;
+  }
+}
+
+.stepButtons {
+  display: flex;
+  justify-content: center;
+}

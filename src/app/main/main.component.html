@@ -1,0 +1,73 @@
+<section class="Main">
+  <div class="MainContainer">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step state="phone">
+          <!-- <ng-template matStepLabel>Primer Campo</ng-template> -->
+          <div class="stepContainer stepOne">
+            <h1>
+              Encuesta de Madurez
+            </h1>
+            <p>
+              Bienvenido a la Encuesta de Madurez de Acsendo, aquí poderá evaluar su nivel de madurez en su proceso de avaliación de talento humano, para que le podamos ayudar a desarrollar sus procesos.
+            </p>
+            <div class="stepButtons">
+              <button mat-raised-button color="primary"matStepperNext>Siguiente</button>
+            </div>
+          </div>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" state="chat">
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <h1>Hola</h1>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="firstFormGroup">
+              <mat-form-field>
+                <input matInput placeholder="Address" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <div class="stepButtons">
+                <button mat-button matStepperPrevious>Volver</button>
+                <button mat-button matStepperNext>Siguiente</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+      <mat-step>
+          <div class="stepContainer">
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button matStepperNext>Empezar de nuevo</button>
+            </div>
+          </div>
+      </mat-step>
+      <mat-step>
+          <div class="stepContainer">
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button (click)="stepper.reset()">Empezar de nuevo</button>
+            </div>
+          </div>
+      </mat-step>
+      <mat-step>
+          <div class="stepContainer">
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button (click)="stepper.reset()">Empezar de nuevo</button>
+            </div>
+          </div>
+      </mat-step>
+
+      <!-- Icon overrides. -->
+      <ng-template matStepperIcon="phone">
+        <mat-icon>call_end</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="chat">
+        <mat-icon>forum</mat-icon>
+      </ng-template>
+    </mat-horizontal-stepper>
+  </div>
+</section>

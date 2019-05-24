@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.mat-stepper-horizontal {
+  background-color: transparent;
+}
+
+.mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover {
+  background-color: transparent !important;
+}
