@@ -18,23 +18,41 @@ export class MainComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
+
+  results: any = [];
 
   constructor(private _formBuilder: FormBuilder) {}
 
   getResults() {
-    console.log(this.firstFormGroup.value);
+    // Push de las respuestas al array
+    this.results.push(
+        this.firstFormGroup.value.firstCtrl, 
+        this.secondFormGroup.value.secondCtrl, 
+        this.thirdFormGroup.value.thirdCtrl, 
+        this.fourthFormGroup.value.fourthCtrl
+      )
+    console.log(this.results);
+    // Transformo textos a numero
+    const resultsFloat = this.results.map( (i) => +i);
+    console.log(resultsFloat);
+    // Sumo los valores del array
+    const suma = resultsFloat.reduce((vAn, vAc, ind, vec) => vAn + vAc);
+    console.log(suma);
   }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['1', Validators.required],
-      secondCtrl: ['1', Validators.required]
+      firstCtrl: ['1', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['1', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['1', Validators.required]
+    });
+    this.fourthFormGroup = this._formBuilder.group({
+      fourthCtrl: ['1', Validators.required]
     });
   }
 }

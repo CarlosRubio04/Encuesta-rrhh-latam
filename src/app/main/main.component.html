@@ -32,14 +32,13 @@
                 <mat-radio-button value="0">No</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-button matStepperPrevious>Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
               </div>
             </form>
           </div>
         </div>
       </mat-step>
-      <mat-step [stepControl]="firstFormGroup">
+      <mat-step [stepControl]="secondFormGroup">
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
@@ -50,13 +49,12 @@
             </div>
           </div>
           <div class="stepForm">
-            <form [formGroup]="firstFormGroup">
+            <form [formGroup]="secondFormGroup">
               <mat-radio-group aria-label="Select an option" color="primary" formControlName="secondCtrl" required>
                 <mat-radio-button value="1">Si</mat-radio-button>
                 <mat-radio-button value="0">No</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-button matStepperPrevious>Volver</button>
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
               </div>
             </form>
@@ -80,7 +78,29 @@
                 <mat-radio-button value="0">No</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-button matStepperPrevious>Volver</button>
+                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="fourthFormGroup">
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>Esta es la prgunta que haríamos?</h1>
+            </div>
+            <div class="stepHeaderPic">
+              <img src="../../assets/1.png" alt="Pic">
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="fourthFormGroup">
+              <mat-radio-group aria-label="Select an option" color="primary" formControlName="fourthCtrl" required>
+                <mat-radio-button value="1">Si</mat-radio-button>
+                <mat-radio-button value="0">No</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
                 <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
               </div>
             </form>
@@ -89,10 +109,16 @@
       </mat-step>
       <mat-step>
           <div class="stepContainer">
-            You are now done.
-            <div>
-              <button mat-button matStepperPrevious>Volver</button>
-              <button mat-button (click)="getResults()">Obtner Datos</button>
+            <div class="stepHeader">
+              <div class="stepHeaderQues">
+                <h1>Es todo !!!!!!!!</h1>
+              </div>
+              <div class="stepHeaderPic">
+                <img src="../../assets/1.png" alt="Pic">
+              </div>
+            </div>
+            <div class="stepButtons">
+              <button mat-raised-button color="primary" (click)="getResults()">Obtener Resultados</button>
             </div>
           </div>
       </mat-step>
