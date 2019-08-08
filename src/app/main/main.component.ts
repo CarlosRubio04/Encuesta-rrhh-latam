@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MainService } from '../services/main.service';
 
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
-  providers: [{
-    provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
-  }]
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { displayDefaultIndicatorType: false }
+    }
+  ]
 })
 export class MainComponent implements OnInit {
   isLinear = true;
@@ -27,14 +29,14 @@ export class MainComponent implements OnInit {
   getResults() {
     // Push de las respuestas al array
     this.results.push(
-        this.firstFormGroup.value.firstCtrl, 
-        this.secondFormGroup.value.secondCtrl, 
-        this.thirdFormGroup.value.thirdCtrl, 
-        this.fourthFormGroup.value.fourthCtrl
-      )
+      this.firstFormGroup.value.firstCtrl,
+      this.secondFormGroup.value.secondCtrl,
+      this.thirdFormGroup.value.thirdCtrl,
+      this.fourthFormGroup.value.fourthCtrl
+    );
     console.log(this.results);
     // Transformo textos a numero
-    const resultsFloat = this.results.map( (i) => +i);
+    const resultsFloat = this.results.map(i => +i);
     console.log(resultsFloat);
     // Sumo los valores del array
     const suma = resultsFloat.reduce((vAn, vAc, ind, vec) => vAn + vAc);
@@ -43,16 +45,16 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['1', Validators.required]
+      firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['1', Validators.required]
+      secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['1', Validators.required]
+      thirdCtrl: ['', Validators.required]
     });
     this.fourthFormGroup = this._formBuilder.group({
-      fourthCtrl: ['1', Validators.required]
+      fourthCtrl: ['', Validators.required]
     });
   }
 }

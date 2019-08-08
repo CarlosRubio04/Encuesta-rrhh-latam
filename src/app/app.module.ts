@@ -43,9 +43,12 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import { HomeComponent } from './home/home.component';
+import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'dashboard', component: MainComponent},
 ];
 
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    HomeComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
