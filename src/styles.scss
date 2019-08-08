@@ -65,7 +65,9 @@ body {
   color: #989898;
 }
 
-
+.mat-step-header .mat-step-icon {
+  font-size: 8px;
+}
 .mat-stepper-horizontal {
   background-color: transparent;
 }
@@ -75,9 +77,10 @@ body {
 }
 
 .mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+  margin-top: 16px;
 }
 .mat-radio-group {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }

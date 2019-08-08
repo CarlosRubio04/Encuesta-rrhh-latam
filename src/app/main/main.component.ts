@@ -21,6 +21,18 @@ export class MainComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
+  fifthFormGroup: FormGroup;
+  sixFormGroup: FormGroup;
+  sevenFormGroup: FormGroup;
+  eightFormGroup: FormGroup;
+  nineFormGroup: FormGroup;
+  tenFormGroup: FormGroup;
+  elevenFormGroup: FormGroup;
+  twelveFormGroup: FormGroup;
+  thirteenFormGroup: FormGroup;
+  fourteenFormGroup: FormGroup;
+  fiveteenFormGroup: FormGroup;
+  sixteenFormGroup: FormGroup;
 
   results: any = [];
 
@@ -32,7 +44,19 @@ export class MainComponent implements OnInit {
       this.firstFormGroup.value.firstCtrl,
       this.secondFormGroup.value.secondCtrl,
       this.thirdFormGroup.value.thirdCtrl,
-      this.fourthFormGroup.value.fourthCtrl
+      this.fourthFormGroup.value.fourthCtrl,
+      this.fifthFormGroup.value.fifthCtrl,
+      this.sixFormGroup.value.sixCtrl,
+      this.sevenFormGroup.value.sevenCtrl,
+      this.eightFormGroup.value.eightCtrl,
+      this.nineFormGroup.value.nineCtrl,
+      this.tenFormGroup.value.tenCtrl,
+      this.elevenFormGroup.value.elevenCtrl,
+      this.twelveFormGroup.value.twelveCtrl,
+      this.thirteenFormGroup.value.thirteenCtrl,
+      this.fourteenFormGroup.value.fourteenCtrl,
+      this.fiveteenFormGroup.value.fiveteenCtrl,
+      this.sixteenFormGroup.value.sixteenCtrl
     );
     console.log(this.results);
     // Transformo textos a numero
@@ -55,6 +79,42 @@ export class MainComponent implements OnInit {
     });
     this.fourthFormGroup = this._formBuilder.group({
       fourthCtrl: ['', Validators.required]
+    });
+    this.fifthFormGroup = this._formBuilder.group({
+      fifthCtrl: ['', Validators.required]
+    });
+    this.sixFormGroup = this._formBuilder.group({
+      sixCtrl: ['', Validators.required]
+    });
+    this.sevenFormGroup = this._formBuilder.group({
+      sevenCtrl: ['', Validators.required]
+    });
+    this.eightFormGroup = this._formBuilder.group({
+      eigthCtrl: ['', Validators.required]
+    });
+    this.nineFormGroup = this._formBuilder.group({
+      nineCtrl: ['', Validators.required]
+    });
+    this.tenFormGroup = this._formBuilder.group({
+      tenCtrl: ['', Validators.required]
+    });
+    this.elevenFormGroup = this._formBuilder.group({
+      elevenCtrl: ['', Validators.required]
+    });
+    this.twelveFormGroup = this._formBuilder.group({
+      twelveCtrl: ['', Validators.required]
+    });
+    this.thirteenFormGroup = this._formBuilder.group({
+      thirteenCtrl: ['', Validators.required]
+    });
+    this.fourteenFormGroup = this._formBuilder.group({
+      fourteenCtrl: ['', Validators.required]
+    });
+    this.fiveteenFormGroup = this._formBuilder.group({
+      fiveteenCtrl: ['', Validators.required]
+    });
+    this.sixteenFormGroup = this._formBuilder.group({
+      sixteenCtrl: ['', Validators.required]
     });
   }
 }

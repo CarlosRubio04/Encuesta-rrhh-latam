@@ -1,135 +1,773 @@
 <section class="Main">
   <div class="MainContainer">
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
-      <mat-step state="phone">
-          <!-- <ng-template matStepLabel>Primer Campo</ng-template> -->
-          <div class="stepContainer stepOne">
-            <h1>
-              Encuesta de Madurez
-            </h1>
-            <p>
-              Bienvenido a la Encuesta de Madurez de Acsendo, aquí poderá evaluar su nivel de madurez en su proceso de avaliación de talento humano, para que le podamos ayudar a desarrollar sus procesos.
-            </p>
-            <div class="stepButtons">
-              <button mat-raised-button color="primary"matStepperNext>Siguiente</button>
-            </div>
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+      <!-- <mat-step>
+        <div class="stepContainer stepOne">
+          <h1>
+            Estado de RRHH en Latam
+          </h1>
+          <p>
+            Esta encuesta está compuesta de 15 preguntas que abordan las
+            siguientes dimensiones: Percepción, Desempeño y Tecnología. Se busca
+            que sea respondida por miembros del área de RRHH*, así como personas
+            de otras áreas para conocer la percepción que tienen del
+            departamento de gestión del talento humano.
+            <br />
+            <small>
+              *En tu empresa se puede llamar Área de Talento Humano, de Capital
+              Humano, de Gestión Humana, o de Gestión de Personas.
+            </small>
+          </p>
+          <div class="stepButtons">
+            <button mat-raised-button color="primary" matStepperNext>
+              Siguiente
+            </button>
           </div>
-      </mat-step>
-      <mat-step [stepControl]="firstFormGroup" state="chat">
+        </div>
+      </mat-step> -->
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>¿En qué área te desempeñas?</ng-template>
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
-              <h1>Esta es la prgunta que haríamos?</h1>
-            </div>
-            <div class="stepHeaderPic">
-              <img src="../../assets/1.png" alt="Pic">
+              <h1>¿En qué área te desempeñas?</h1>
             </div>
           </div>
           <div class="stepForm">
             <form [formGroup]="firstFormGroup">
-              <mat-radio-group aria-label="Select an option" color="primary" formControlName="firstCtrl" required>
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="0">No</mat-radio-button>
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="firstCtrl"
+                required
+              >
+                <mat-radio-button value="1">RRHH</mat-radio-button>
+                <mat-radio-button value="2">Administración</mat-radio-button>
+                <mat-radio-button value="3"
+                  >Contabilidad y finanzas</mat-radio-button
+                >
+                <mat-radio-button value="4">Dirección</mat-radio-button>
+                <mat-radio-button value="5">Ventas</mat-radio-button>
+                <mat-radio-button value="5">Mercadeo</mat-radio-button>
+                <mat-radio-button value="6">Otro</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
               </div>
             </form>
           </div>
         </div>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>¿Cuál es tu cargo?</ng-template>
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
-              <h1>Esta es la prgunta que haríamos?</h1>
-            </div>
-            <div class="stepHeaderPic">
-              <img src="../../assets/1.png" alt="Pic">
+              <h1>¿Cuál es tu cargo?</h1>
             </div>
           </div>
           <div class="stepForm">
             <form [formGroup]="secondFormGroup">
-              <mat-radio-group aria-label="Select an option" color="primary" formControlName="secondCtrl" required>
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="0">No</mat-radio-button>
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="secondCtrl"
+                required
+              >
+                <mat-radio-button value="1">Director general</mat-radio-button>
+                <mat-radio-button value="2"
+                  >Presidente o vicepresidente</mat-radio-button
+                >
+                <mat-radio-button value="3">Director de RRHH</mat-radio-button>
+                <mat-radio-button value="4"
+                  >Director de otro departamento</mat-radio-button
+                >
+                <mat-radio-button value="5">Supervisor</mat-radio-button>
+                <mat-radio-button value="6">Asistente</mat-radio-button>
+                <mat-radio-button value="7">Analista</mat-radio-button>
+                <mat-radio-button value="8">Otro</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
               </div>
             </form>
           </div>
         </div>
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup">
+        <ng-template matStepLabel
+          >¿En qué sector se desempeña tu empresa?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
-              <h1>Esta es la prgunta que haríamos?</h1>
-            </div>
-            <div class="stepHeaderPic">
-              <img src="../../assets/1.png" alt="Pic">
+              <h1>¿En qué sector se desempeña tu empresa?</h1>
             </div>
           </div>
           <div class="stepForm">
             <form [formGroup]="thirdFormGroup">
-              <mat-radio-group aria-label="Select an option" color="primary" formControlName="thirdCtrl" required>
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="0">No</mat-radio-button>
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="thirdCtrl"
+                required
+              >
+                <mat-radio-button value="1">Financiero</mat-radio-button>
+                <mat-radio-button value="2">Servicios</mat-radio-button>
+                <mat-radio-button value="3">Educación</mat-radio-button>
+                <mat-radio-button value="4">Comunicaciones</mat-radio-button>
+                <mat-radio-button value="5">Industrial</mat-radio-button>
+                <mat-radio-button value="6"
+                  >Minero y energético</mat-radio-button
+                >
+                <mat-radio-button value="7">Salud</mat-radio-button>
+                <mat-radio-button value="8">Construcción</mat-radio-button>
+                <mat-radio-button value="9">Transporte</mat-radio-button>
+                <mat-radio-button value="10">Comercio</mat-radio-button>
+                <mat-radio-button value="11">Solidario</mat-radio-button>
+                <mat-radio-button value="12">Agropecuario</mat-radio-button>
+                <mat-radio-button value="13">Otro</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
               </div>
             </form>
           </div>
         </div>
       </mat-step>
       <mat-step [stepControl]="fourthFormGroup">
+        <ng-template matStepLabel
+          >¿Aproximadamente cuántos colaboradores trabajan en tu
+          empresa?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
-              <h1>Esta es la prgunta que haríamos?</h1>
-            </div>
-            <div class="stepHeaderPic">
-              <img src="../../assets/1.png" alt="Pic">
+              <h1>
+                ¿Aproximadamente cuántos colaboradores trabajan en tu empresa?
+              </h1>
             </div>
           </div>
           <div class="stepForm">
             <form [formGroup]="fourthFormGroup">
-              <mat-radio-group aria-label="Select an option" color="primary" formControlName="fourthCtrl" required>
-                <mat-radio-button value="1">Si</mat-radio-button>
-                <mat-radio-button value="0">No</mat-radio-button>
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="fourthCtrl"
+                required
+              >
+                <mat-radio-button value="1">1-10</mat-radio-button>
+                <mat-radio-button value="2">11-30</mat-radio-button>
+                <mat-radio-button value="3">31-50</mat-radio-button>
+                <mat-radio-button value="4">51-100</mat-radio-button>
+                <mat-radio-button value="5">101-250</mat-radio-button>
+                <mat-radio-button value="6">251-500</mat-radio-button>
+                <mat-radio-button value="7">+500</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
-                <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
               </div>
             </form>
           </div>
         </div>
       </mat-step>
-      <mat-step>
-          <div class="stepContainer">
-            <div class="stepHeader">
-              <div class="stepHeaderQues">
-                <h1>Es todo !!!!!!!!</h1>
-              </div>
-              <div class="stepHeaderPic">
-                <img src="../../assets/1.png" alt="Pic">
-              </div>
-            </div>
-            <div class="stepButtons">
-              <button mat-raised-button color="primary" (click)="getResults()">Obtener Resultados</button>
+
+      <mat-step [stepControl]="fifthFormGroup">
+        <ng-template matStepLabel
+          >¿Consideras que el área de RRHH tiene un rol estratégico en la
+          empresa?</ng-template
+        >
+
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Consideras que el área de RRHH tiene un rol estratégico en la
+                empresa?
+              </h1>
             </div>
           </div>
+          <div class="stepForm">
+            <form [formGroup]="fifthFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="fifthCtrl"
+                required
+              >
+                <mat-radio-button value="1">Sí</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </mat-step>
 
-      <!-- Icon overrides. -->
-      <ng-template matStepperIcon="phone">
-        <mat-icon>call_end</mat-icon>
-      </ng-template>
-      <ng-template matStepperIcon="chat">
-        <mat-icon>forum</mat-icon>
-      </ng-template>
-    </mat-horizontal-stepper>
+      <mat-step [stepControl]="sixFormGroup">
+        <ng-template matStepLabel
+          >¿Sientes que el área de RRHH contribuye de forma activa al logro de
+          las metas de la empresa?</ng-template
+        >
+
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Sientes que el área de RRHH contribuye de forma activa al logro
+                de las metas de la empresa?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="sixFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="sixCtrl"
+                required
+              >
+                <mat-radio-button value="1">Sí</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="sevenFormGroup">
+        <ng-template matStepLabel
+          >¿El departamento de RRHH participa en la definición de la estrategia
+          organizacional?</ng-template
+        >
+
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿El departamento de RRHH participa en la definición de la
+                estrategia organizacional?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="sevenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="sevenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Sí, participa en su definición</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >No, su criterio no es tenido en cuenta</mat-radio-button
+                >
+                <mat-radio-button value="3">No estoy seguro</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="eigthFormGroup">
+        <ng-template matStepLabel
+          >¿En qué ocupa la mayoría de su tiempo el área de RRHH?</ng-template
+        >
+
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿En qué ocupa la mayoría de su tiempo el área de RRHH?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="eightFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="eigthCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >En el proceso de selección y reclutamiento</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Realizando actividades de capacitación</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Gestionando labores administrativas o
+                  disciplinarias</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Planificando actividades de bienestar y satisfacción
+                  laboral</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Realizando procesos de evaluación de
+                  desempeño</mat-radio-button
+                >
+                <mat-radio-button value="6"
+                  >Ayudando a los directivos en actividades
+                  estratégicas</mat-radio-button
+                >
+                <mat-radio-button value="7"
+                  >Haciendo los pagos de nómina</mat-radio-button
+                >
+                <mat-radio-button value="8">No tengo idea</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="nineFormGroup">
+        <ng-template matStepLabel
+          >¿Cuál es el principal desafío al que se enfrenta el área de
+          RRHH?</ng-template
+        >
+
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Cuál es el principal desafío al que se enfrenta el área de
+                RRHH?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="nineFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="nineCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Tener un bajo presupuesto</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Mantener alineada la estrategia</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Conseguir al mejor talento humano</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Impulsar la transformación digital</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Retener y fidelizar a los colaboradores</mat-radio-button
+                >
+                <mat-radio-button value="6"
+                  >Aumentar la participación de los
+                  colaboradores</mat-radio-button
+                >
+                <mat-radio-button value="7"
+                  >Cambiar la percepción que tienen de RRHH en otras
+                  áreas</mat-radio-button
+                >
+                <mat-radio-button value="8"
+                  >Contar con el respaldo de la
+                  gerencia/presidencia</mat-radio-button
+                >
+                <mat-radio-button value="9">No tengo idea</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="tenFormGroup">
+          <ng-template matStepLabel
+          >¿Cuáles crees que deberían ser las prioridades de RRHH?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Cuáles crees que deberían ser las prioridades de RRHH?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="tenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="tenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Conducir la gestión del cambio</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Mejorar la satisfacción de los
+                  colaboradores</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Ayudar a los colaboradores y equipos de trabajo a ser más
+                  productivos</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Proporcionar a los directivos datos para la toma de
+                  decisiones estratégicas</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Asegurar una mayor alineación entre la cultura deseada y la
+                  real</mat-radio-button
+                >
+                <mat-radio-button value="6"
+                  >Alinear a los líderes para tener mayor impacto en los
+                  resultados del negocio</mat-radio-button
+                >
+                <mat-radio-button value="7">No tengo idea</mat-radio-button>
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+
+      <mat-step [stepControl]="elevenFormGroup">
+          <ng-template matStepLabel
+          >¿Qué tan satisfecho te sientes con el trabajo de RRHH?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Qué tan satisfecho te sientes con el trabajo de RRHH?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="elevenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="elevenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Muy insatisfecho</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Insatisfecho</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Neutro</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Satisfecho</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Muy satisfecho</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+
+      <mat-step [stepControl]="twelveFormGroup">
+          <ng-template matStepLabel
+          >¿En lo corrido del año el área de RRHH ha realizado algún proceso de evaluación?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿En lo corrido del año el área de RRHH ha realizado algún proceso de evaluación?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="twelveFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="twelveCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Sí</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >No</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >No estoy seguro</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+
+      <mat-step [stepControl]="thirteenFormGroup">
+          <ng-template matStepLabel
+          >¿Consideras que se puede apoyar en el área de RRHH para lograr un mejor desempeño?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Consideras que se puede apoyar en el área de RRHH para lograr un mejor desempeño?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="thirteenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="thirteenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Sí</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Sí, pero solo para temas puntuales</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >No, me apoyo en mi jefe directo</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >No, me apoyo en mis compañeros</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >No, lo hago por mi cuenta</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="fourteenFormGroup">
+          <ng-template matStepLabel
+          >En el futuro, ¿cuál de las siguientes será la competencia más importante para tu cargo?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                En el futuro, ¿cuál de las siguientes será la competencia más importante para tu cargo?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="fourteenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="fourteenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Inteligencia emocional</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Solución de problemas</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Pensamiento crítico</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Aprendizaje activo</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Creatividad</mat-radio-button
+                >
+                <mat-radio-button value="6"
+                  >Manejo de personal</mat-radio-button
+                >
+                <mat-radio-button value="7"
+                  >Coordinación de equipos</mat-radio-button
+                >
+                <mat-radio-button value="8"
+                  >Toma de decisiones</mat-radio-button
+                >
+                <mat-radio-button value="9"
+                  >Negociación</mat-radio-button
+                >
+                <mat-radio-button value="10"
+                  >Habilidades tecnológicas</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="fiveteenFormGroup">
+          <ng-template matStepLabel
+          >¿Cuáles de las siguientes tendencias de talento humano son más relevantes en tu industria?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Cuáles de las siguientes tendencias de talento humano son más relevantes en tu industria?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="fiveteenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="fiveteenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Metodología agile</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >Big Data</mat-radio-button
+                >
+                <mat-radio-button value="3"
+                  >Machine learning</mat-radio-button
+                >
+                <mat-radio-button value="4"
+                  >Inteligencia Artificial</mat-radio-button
+                >
+                <mat-radio-button value="5"
+                  >Employee Experience</mat-radio-button
+                >
+                <mat-radio-button value="6"
+                  >Redes sociales corporativas</mat-radio-button
+                >
+                <mat-radio-button value="7"
+                  >Plataformas colaborativas de trabajo</mat-radio-button
+                >
+                <mat-radio-button value="8"
+                  >No identifico ninguna de las anteriores</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="sixteenFormGroup">
+          <ng-template matStepLabel
+          >¿Considera que el uso de tecnología podría mejorar la gestión del recurso humano en su compañía?</ng-template>
+        <div class="stepContainer">
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>
+                ¿Considera que el uso de tecnología podría mejorar la gestión del recurso humano en su compañía?
+              </h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="sixteenFormGroup">
+              <mat-radio-group
+                aria-label="Select an option"
+                color="primary"
+                formControlName="sixteenCtrl"
+                required
+              >
+                <mat-radio-button value="1"
+                  >Sí</mat-radio-button
+                >
+                <mat-radio-button value="2"
+                  >No</mat-radio-button
+                >
+              </mat-radio-group>
+              <div class="stepButtons">
+                <button mat-raised-button color="primary" matStepperNext>
+                  Siguiente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <div class="stepContainer">
+            <ng-template matStepLabel
+            >Final</ng-template>
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>Es todo !!!!!!!!</h1>
+            </div>
+            <div class="stepHeaderPic">
+              <img src="../../assets/1.png" alt="Pic" />
+            </div>
+          </div>
+          <div class="stepButtons">
+            <button mat-raised-button color="primary" (click)="getResults()">
+              Obtener Resultados
+            </button>
+          </div>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
   </div>
 </section>
