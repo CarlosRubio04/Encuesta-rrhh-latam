@@ -48,7 +48,7 @@ export class MainComponent implements OnInit {
       this.fifthFormGroup.value.fifthCtrl,
       this.sixFormGroup.value.sixCtrl,
       this.sevenFormGroup.value.sevenCtrl,
-      this.eightFormGroup.value.eightCtrl,
+      this.eightFormGroup.value.eigthCtrl,
       this.nineFormGroup.value.nineCtrl,
       this.tenFormGroup.value.tenCtrl,
       this.elevenFormGroup.value.elevenCtrl,

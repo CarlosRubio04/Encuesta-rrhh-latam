@@ -12,20 +12,16 @@
 
 
 $my-blue: (
-  50: #7fdddd,
-  100: #7faedd,
-  200: #7f7fdd,
-  300: #7faedd,
-  400: #7faedd,
-  500: #7faedd,
-  600: #7faedd,
-  700: #7faedd,
-  800: #7faedd,
-  900: #7faedd,
-  A100: #7faedd,
-  A200: #7faedd,
-  A400: #7faedd,
-  A700: #7faedd,
+  50: #f1f8ff,
+  100: #ebf2ff,
+  200: #e2eaff,
+  300: #d3dbf9,
+  400: #b0b8d4,
+  500: #9098b4,
+  600: #68708a,
+  700: #545c75,
+  800: #353d55,
+  900: #131D32,
   contrast: (
     50: white,
     100: white,
@@ -37,26 +33,49 @@ $my-blue: (
     700: white,
     800: white,
     900: white,
-    A100: white,
-    A200: white,
-    A400: white,
-    A700: white,
   )
 );
+
+
+$my-accent: (
+  50: #e3f7fb,
+  100: #b9ecf4,
+  200: #8fe0ec,
+  300: #6ad3e3,
+  400: #58c9dc,
+  500: #53bfd5,
+  600: #4dafc2,
+  700: #469aa8,
+  800: #408690,
+  900: #366265,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
 // below creates a primary palette with three shades of blue
-$candy-app-primary: mat-palette($my-blue, 100, 50, 200);;
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-app: mat-palette($my-blue, 900, 800, 700);;
+$custom-theme-app-accent:  mat-palette($my-accent, 500, 100, 400);
 
 // The warn palette is optional (defaults to red).
-$candy-app-warn:    mat-palette($mat-red);
+$custom-theme-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$custom-theme-app-theme: mat-light-theme($custom-theme-app, $custom-theme-app-accent, $custom-theme-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($candy-app-theme);
+@include angular-material-theme($custom-theme-app-theme);
 
 
 
@@ -76,11 +95,28 @@ body {
   background-color: transparent !important;
 }
 
-.mat-radio-button ~ .mat-radio-button {
-  margin-top: 16px;
+.mat-radio-button {
+  margin-top: 12px;
+  background-color: #b9ecf4;
+  border-radius: 4px;
+}
+.mat-radio-label {
+  padding: 8px 12px 8px 8px;
+}
+.mat-radio-outer-circle {
+  border-color: #469aa8;
+}
+.mat-radio-label-content {
+  color: #408690;
+  margin-left: 12px;
+  border-left: 1px solid #469aa8;
 }
 .mat-radio-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.mat-step-header .mat-step-label {
+  display: none;
 }
