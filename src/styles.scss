@@ -63,7 +63,7 @@ $my-accent: (
 );
 
 // below creates a primary palette with three shades of blue
-$custom-theme-app: mat-palette($my-blue, 900, 800, 700);;
+$custom-theme-app: mat-palette($my-blue, 900);
 $custom-theme-app-accent:  mat-palette($my-accent, 500, 100, 400);
 
 // The warn palette is optional (defaults to red).

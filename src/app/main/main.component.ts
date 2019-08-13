@@ -34,37 +34,41 @@ export class MainComponent implements OnInit {
   fiveteenFormGroup: FormGroup;
   sixteenFormGroup: FormGroup;
 
-  results: any = [];
+  results: any = {};
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private mainService: MainService) {}
 
   getResults() {
     // Push de las respuestas al array
-    this.results.push(
-      this.firstFormGroup.value.firstCtrl,
-      this.secondFormGroup.value.secondCtrl,
-      this.thirdFormGroup.value.thirdCtrl,
-      this.fourthFormGroup.value.fourthCtrl,
-      this.fifthFormGroup.value.fifthCtrl,
-      this.sixFormGroup.value.sixCtrl,
-      this.sevenFormGroup.value.sevenCtrl,
-      this.eightFormGroup.value.eigthCtrl,
-      this.nineFormGroup.value.nineCtrl,
-      this.tenFormGroup.value.tenCtrl,
-      this.elevenFormGroup.value.elevenCtrl,
-      this.twelveFormGroup.value.twelveCtrl,
-      this.thirteenFormGroup.value.thirteenCtrl,
-      this.fourteenFormGroup.value.fourteenCtrl,
-      this.fiveteenFormGroup.value.fiveteenCtrl,
-      this.sixteenFormGroup.value.sixteenCtrl
-    );
-    console.log(this.results);
-    // Transformo textos a numero
-    const resultsFloat = this.results.map(i => +i);
-    console.log(resultsFloat);
-    // Sumo los valores del array
-    const suma = resultsFloat.reduce((vAn, vAc, ind, vec) => vAn + vAc);
-    console.log(suma);
+    this.results = {
+      primera: this.firstFormGroup.value.firstCtrl,
+      segunda: this.secondFormGroup.value.secondCtrl,
+      tercera: this.thirdFormGroup.value.thirdCtrl,
+      cuarta: this.fourthFormGroup.value.fourthCtrl,
+      quinta: this.fifthFormGroup.value.fifthCtrl,
+      sexta: this.sixFormGroup.value.sixCtrl,
+      septima: this.sevenFormGroup.value.sevenCtrl,
+      octava: this.eightFormGroup.value.eigthCtrl,
+      novena: this.nineFormGroup.value.nineCtrl,
+      decima: this.tenFormGroup.value.tenCtrl,
+      once: this.elevenFormGroup.value.elevenCtrl,
+      doce: this.twelveFormGroup.value.twelveCtrl,
+      trece: this.thirteenFormGroup.value.thirteenCtrl,
+      catorce: this.fourteenFormGroup.value.fourteenCtrl,
+      quince: this.fiveteenFormGroup.value.fiveteenCtrl,
+      dieciseis: this.sixteenFormGroup.value.sixteenCtrl
+    };
+    // console.log(this.results);
+    // // Transformo textos a numero
+    // const resultsFloat = this.results.map(i => +i);
+    // console.log(resultsFloat);
+    // // Sumo los valores del array
+    // const suma = resultsFloat.reduce((vAn, vAc, ind, vec) => vAn + vAc);
+    // console.log(suma);
+
+    this.mainService.addAnswer(this.results);
+    const response = this.mainService.getAnswers().subscribe();
+    console.log(response);
   }
 
   ngOnInit() {
