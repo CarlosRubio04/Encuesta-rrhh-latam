@@ -41,37 +41,33 @@ export class MainComponent implements OnInit {
   getResults() {
     // Push de las respuestas al array
     this.results = {
-      primera: this.firstFormGroup.value.firstCtrl,
-      segunda: this.secondFormGroup.value.secondCtrl,
-      tercera: this.thirdFormGroup.value.thirdCtrl,
-      cuarta: this.fourthFormGroup.value.fourthCtrl,
-      quinta: this.fifthFormGroup.value.fifthCtrl,
-      sexta: this.sixFormGroup.value.sixCtrl,
-      septima: this.sevenFormGroup.value.sevenCtrl,
-      octava: this.eightFormGroup.value.eigthCtrl,
-      novena: this.nineFormGroup.value.nineCtrl,
-      decima: this.tenFormGroup.value.tenCtrl,
-      once: this.elevenFormGroup.value.elevenCtrl,
-      doce: this.twelveFormGroup.value.twelveCtrl,
-      trece: this.thirteenFormGroup.value.thirteenCtrl,
-      catorce: this.fourteenFormGroup.value.fourteenCtrl,
-      quince: this.fiveteenFormGroup.value.fiveteenCtrl,
-      dieciseis: this.sixteenFormGroup.value.sixteenCtrl
+      res_01: this.firstFormGroup.value.firstCtrl,
+      res_02: this.secondFormGroup.value.secondCtrl,
+      res_03: this.thirdFormGroup.value.thirdCtrl,
+      res_04: this.fourthFormGroup.value.fourthCtrl,
+      res_05: this.fifthFormGroup.value.fifthCtrl,
+      res_06: this.sixFormGroup.value.sixCtrl,
+      res_07: this.sevenFormGroup.value.sevenCtrl,
+      res_08: this.eightFormGroup.value.eigthCtrl,
+      res_09: this.nineFormGroup.value.nineCtrl,
+      res_10: this.tenFormGroup.value.tenCtrl,
+      res_11: this.elevenFormGroup.value.elevenCtrl,
+      res_12: this.twelveFormGroup.value.twelveCtrl,
+      res_13: this.thirteenFormGroup.value.thirteenCtrl,
+      res_14: this.fourteenFormGroup.value.fourteenCtrl,
+      res_15: this.fiveteenFormGroup.value.fiveteenCtrl,
+      res_16: this.sixteenFormGroup.value.sixteenCtrl
     };
-    // console.log(this.results);
-    // // Transformo textos a numero
-    // const resultsFloat = this.results.map(i => +i);
-    // console.log(resultsFloat);
-    // // Sumo los valores del array
-    // const suma = resultsFloat.reduce((vAn, vAc, ind, vec) => vAn + vAc);
-    // console.log(suma);
 
     this.mainService.addAnswer(this.results);
-    const response = this.mainService.getAnswers().subscribe();
-    console.log(response);
   }
 
   ngOnInit() {
+
+    const response = this.mainService.getAnswers().valueChanges().subscribe((res) => {
+      console.log(res);
+    });
+
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });

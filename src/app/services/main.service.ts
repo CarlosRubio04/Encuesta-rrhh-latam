@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class MainService {
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFireDatabase) { }
 
   public addAnswer(data) {
-    this.db.collection('answers').add(data)
+    const ID = Date.now();
+    this.db.database.ref('answers/' + ID).set(data)
       .then( (res) => {
-        console.log(res.id);
+        console.log(res);
       })
       .catch( (error) => {
         console.log(error);
@@ -20,7 +21,7 @@ export class MainService {
   }
 
   public getAnswers() {
-    return this.db.collection('answers').get();
+    return this.db.list('answers');
   }
 
 }

@@ -11,7 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component'; 
@@ -56,7 +56,8 @@ import { ResultsComponent } from './results/results.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: MainComponent }
+  { path: 'dashboard', component: MainComponent },
+  { path: 'results', component: ResultsComponent }
 ];
 
 const firebaseConfig = {
@@ -72,7 +73,7 @@ const firebaseConfig = {
 @NgModule({
   declarations: [AppComponent, MainComponent, HomeComponent, ResultsComponent],
   imports: [
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
     BrowserAnimationsModule,
