@@ -1,0 +1,12 @@
+.Home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    &Container {
+        width: 600px;
+        max-width: 100%;
+    }
+}

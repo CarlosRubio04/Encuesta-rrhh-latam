@@ -54,7 +54,7 @@ import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: MainComponent },
   { path: 'results', component: ResultsComponent }
