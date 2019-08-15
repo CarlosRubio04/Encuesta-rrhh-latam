@@ -7,6 +7,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -111,6 +112,7 @@ const firebaseConfig = {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],

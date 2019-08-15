@@ -33,7 +33,10 @@ export class MainComponent implements OnInit {
   fourteenFormGroup: FormGroup;
   fiveteenFormGroup: FormGroup;
   sixteenFormGroup: FormGroup;
+  countryFormGroup: FormGroup;
 
+  countries: any = [];
+  defaultCuntry: any = 'CO';
   results: any = {};
 
   constructor(private _formBuilder: FormBuilder, private mainService: MainService) {}
@@ -64,8 +67,18 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
-    const response = this.mainService.getAnswers().valueChanges().subscribe((res) => {
+    const Response = this.mainService.getAnswers().valueChanges().subscribe((res) => {
       console.log(res);
+    });
+
+    const Country = this.mainService.findCountry().subscribe( (data) => {
+      console.log(data);
+      this.defaultCuntry = data;
+    });
+
+    const Countries = this.mainService.getListOfCountries().subscribe((data) => {
+      console.log(data);
+      this.countries = data;
     });
 
     this.firstFormGroup = this._formBuilder.group({
@@ -115,6 +128,9 @@ export class MainComponent implements OnInit {
     });
     this.sixteenFormGroup = this._formBuilder.group({
       sixteenCtrl: ['', Validators.required]
+    });
+    this.countryFormGroup = this._formBuilder.group({
+      countryCtrl: ['', Validators.required]
     });
   }
 }

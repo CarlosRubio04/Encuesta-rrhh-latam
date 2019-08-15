@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
+  API_IP_URL: string = 'https://api.ipdata.co/?api-key=';
+  API_IP_KEY: string = '7836a4acdb465320d4436d3ce4bfdd37f004278fd8a2aabb0c6cce9d';
+  API_COUNTRIES: string = 'https://restcountries.eu/rest/v2';
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private http: HttpClient) { }
 
   public addAnswer(data) {
     const ID = Date.now();
@@ -22,6 +26,14 @@ export class MainService {
 
   public getAnswers() {
     return this.db.list('answers');
+  }
+
+  public findCountry () {
+    return this.http.get(this.API_IP_URL + this.API_IP_KEY);
+  }
+
+  public getListOfCountries () {
+    return this.http.get(`${this.API_COUNTRIES}/lang/es`);
   }
 
 }

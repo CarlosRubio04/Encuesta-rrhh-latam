@@ -1,6 +1,41 @@
 <section class="Main">
   <div class="MainContainer">
     <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="countryFormGroup">
+        <div class="stepContainer">
+          <ng-template matStepLabel>País</ng-template>
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>¿País?</h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="countryFormGroup">
+              <mat-form-field appearance="outline">
+                <mat-label>País</mat-label>
+                <mat-select [(value)]="defaultCuntry.country_code"
+                  color="primary"
+                  formControlName="countryCtrl"
+                >
+                  <mat-option
+                    *ngFor="let country of countries"
+                    [value]="country.alpha2Code"
+                  >
+                    {{ country.nativeName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+            </form>
+          </div>
+          <div class="stepButtons">
+            <button mat-raised-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </div>
+        </div>
+      </mat-step>
+
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>¿En qué área te desempeñas?</ng-template>
         <div class="stepContainer">
@@ -390,8 +425,9 @@
       </mat-step>
 
       <mat-step [stepControl]="tenFormGroup">
-          <ng-template matStepLabel
-          >¿Cuáles crees que deberían ser las prioridades de RRHH?</ng-template>
+        <ng-template matStepLabel
+          >¿Cuáles crees que deberían ser las prioridades de RRHH?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
@@ -443,10 +479,10 @@
         </div>
       </mat-step>
 
-
       <mat-step [stepControl]="elevenFormGroup">
-          <ng-template matStepLabel
-          >¿Qué tan satisfecho te sientes con el trabajo de RRHH?</ng-template>
+        <ng-template matStepLabel
+          >¿Qué tan satisfecho te sientes con el trabajo de RRHH?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
@@ -463,21 +499,11 @@
                 formControlName="elevenCtrl"
                 required
               >
-                <mat-radio-button value="1"
-                  >Muy insatisfecho</mat-radio-button
-                >
-                <mat-radio-button value="2"
-                  >Insatisfecho</mat-radio-button
-                >
-                <mat-radio-button value="3"
-                  >Neutro</mat-radio-button
-                >
-                <mat-radio-button value="4"
-                  >Satisfecho</mat-radio-button
-                >
-                <mat-radio-button value="5"
-                  >Muy satisfecho</mat-radio-button
-                >
+                <mat-radio-button value="1">Muy insatisfecho</mat-radio-button>
+                <mat-radio-button value="2">Insatisfecho</mat-radio-button>
+                <mat-radio-button value="3">Neutro</mat-radio-button>
+                <mat-radio-button value="4">Satisfecho</mat-radio-button>
+                <mat-radio-button value="5">Muy satisfecho</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
                 <button mat-raised-button color="primary" matStepperNext>
@@ -489,15 +515,17 @@
         </div>
       </mat-step>
 
-
       <mat-step [stepControl]="twelveFormGroup">
-          <ng-template matStepLabel
-          >¿En lo corrido del año el área de RRHH ha realizado algún proceso de evaluación?</ng-template>
+        <ng-template matStepLabel
+          >¿En lo corrido del año el área de RRHH ha realizado algún proceso de
+          evaluación?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
               <h1>
-                ¿En lo corrido del año el área de RRHH ha realizado algún proceso de evaluación?
+                ¿En lo corrido del año el área de RRHH ha realizado algún
+                proceso de evaluación?
               </h1>
             </div>
           </div>
@@ -509,15 +537,9 @@
                 formControlName="twelveCtrl"
                 required
               >
-                <mat-radio-button value="1"
-                  >Sí</mat-radio-button
-                >
-                <mat-radio-button value="2"
-                  >No</mat-radio-button
-                >
-                <mat-radio-button value="3"
-                  >No estoy seguro</mat-radio-button
-                >
+                <mat-radio-button value="1">Sí</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+                <mat-radio-button value="3">No estoy seguro</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
                 <button mat-raised-button color="primary" matStepperNext>
@@ -529,15 +551,17 @@
         </div>
       </mat-step>
 
-
       <mat-step [stepControl]="thirteenFormGroup">
-          <ng-template matStepLabel
-          >¿Consideras que se puede apoyar en el área de RRHH para lograr un mejor desempeño?</ng-template>
+        <ng-template matStepLabel
+          >¿Consideras que se puede apoyar en el área de RRHH para lograr un
+          mejor desempeño?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
               <h1>
-                ¿Consideras que se puede apoyar en el área de RRHH para lograr un mejor desempeño?
+                ¿Consideras que se puede apoyar en el área de RRHH para lograr
+                un mejor desempeño?
               </h1>
             </div>
           </div>
@@ -549,9 +573,7 @@
                 formControlName="thirteenCtrl"
                 required
               >
-                <mat-radio-button value="1"
-                  >Sí</mat-radio-button
-                >
+                <mat-radio-button value="1">Sí</mat-radio-button>
                 <mat-radio-button value="2"
                   >Sí, pero solo para temas puntuales</mat-radio-button
                 >
@@ -576,13 +598,16 @@
       </mat-step>
 
       <mat-step [stepControl]="fourteenFormGroup">
-          <ng-template matStepLabel
-          >En el futuro, ¿cuál de las siguientes será la competencia más importante para tu cargo?</ng-template>
+        <ng-template matStepLabel
+          >En el futuro, ¿cuál de las siguientes será la competencia más
+          importante para tu cargo?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
               <h1>
-                En el futuro, ¿cuál de las siguientes será la competencia más importante para tu cargo?
+                En el futuro, ¿cuál de las siguientes será la competencia más
+                importante para tu cargo?
               </h1>
             </div>
           </div>
@@ -606,9 +631,7 @@
                 <mat-radio-button value="4"
                   >Aprendizaje activo</mat-radio-button
                 >
-                <mat-radio-button value="5"
-                  >Creatividad</mat-radio-button
-                >
+                <mat-radio-button value="5">Creatividad</mat-radio-button>
                 <mat-radio-button value="6"
                   >Manejo de personal</mat-radio-button
                 >
@@ -618,9 +641,7 @@
                 <mat-radio-button value="8"
                   >Toma de decisiones</mat-radio-button
                 >
-                <mat-radio-button value="9"
-                  >Negociación</mat-radio-button
-                >
+                <mat-radio-button value="9">Negociación</mat-radio-button>
                 <mat-radio-button value="10"
                   >Habilidades tecnológicas</mat-radio-button
                 >
@@ -636,13 +657,16 @@
       </mat-step>
 
       <mat-step [stepControl]="fiveteenFormGroup">
-          <ng-template matStepLabel
-          >¿Cuáles de las siguientes tendencias de talento humano son más relevantes en tu industria?</ng-template>
+        <ng-template matStepLabel
+          >¿Cuáles de las siguientes tendencias de talento humano son más
+          relevantes en tu industria?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
               <h1>
-                ¿Cuáles de las siguientes tendencias de talento humano son más relevantes en tu industria?
+                ¿Cuáles de las siguientes tendencias de talento humano son más
+                relevantes en tu industria?
               </h1>
             </div>
           </div>
@@ -654,15 +678,9 @@
                 formControlName="fiveteenCtrl"
                 required
               >
-                <mat-radio-button value="1"
-                  >Metodología agile</mat-radio-button
-                >
-                <mat-radio-button value="2"
-                  >Big Data</mat-radio-button
-                >
-                <mat-radio-button value="3"
-                  >Machine learning</mat-radio-button
-                >
+                <mat-radio-button value="1">Metodología agile</mat-radio-button>
+                <mat-radio-button value="2">Big Data</mat-radio-button>
+                <mat-radio-button value="3">Machine learning</mat-radio-button>
                 <mat-radio-button value="4"
                   >Inteligencia Artificial</mat-radio-button
                 >
@@ -690,13 +708,16 @@
       </mat-step>
 
       <mat-step [stepControl]="sixteenFormGroup">
-          <ng-template matStepLabel
-          >¿Considera que el uso de tecnología podría mejorar la gestión del recurso humano en su compañía?</ng-template>
+        <ng-template matStepLabel
+          >¿Considera que el uso de tecnología podría mejorar la gestión del
+          recurso humano en su compañía?</ng-template
+        >
         <div class="stepContainer">
           <div class="stepHeader">
             <div class="stepHeaderQues">
               <h1>
-                ¿Considera que el uso de tecnología podría mejorar la gestión del recurso humano en su compañía?
+                ¿Considera que el uso de tecnología podría mejorar la gestión
+                del recurso humano en su compañía?
               </h1>
             </div>
           </div>
@@ -708,12 +729,8 @@
                 formControlName="sixteenCtrl"
                 required
               >
-                <mat-radio-button value="1"
-                  >Sí</mat-radio-button
-                >
-                <mat-radio-button value="2"
-                  >No</mat-radio-button
-                >
+                <mat-radio-button value="1">Sí</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
               </mat-radio-group>
               <div class="stepButtons">
                 <button mat-raised-button color="primary" matStepperNext>
@@ -721,26 +738,6 @@
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      </mat-step>
-
-      <mat-step>
-        <div class="stepContainer">
-            <ng-template matStepLabel
-            >Final</ng-template>
-          <div class="stepHeader">
-            <div class="stepHeaderQues">
-              <h1>Es todo !!!!!!!!</h1>
-            </div>
-            <div class="stepHeaderPic">
-              <img src="../../assets/1.png" alt="Pic" />
-            </div>
-          </div>
-          <div class="stepButtons">
-            <button mat-raised-button color="primary" (click)="getResults()">
-              Obtener Resultados
-            </button>
           </div>
         </div>
       </mat-step>
