@@ -82,6 +82,8 @@ $custom-theme-app-theme: mat-light-theme($custom-theme-app, $custom-theme-app-ac
 body {
   font-family: 'Roboto', sans-serif;
   color: #989898;
+  margin: 0;
+  padding: 0;
 }
 
 .mat-step-header .mat-step-icon {
@@ -119,4 +121,8 @@ body {
 
 .mat-step-header .mat-step-label {
   display: none;
+}
+.mat-form-field {
+  max-width: 100%;
+  width: 600px;
 }
