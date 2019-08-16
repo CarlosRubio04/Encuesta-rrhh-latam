@@ -81,7 +81,7 @@ $custom-theme-app-theme: mat-light-theme($custom-theme-app, $custom-theme-app-ac
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #989898;
+  color: #131d32;
   margin: 0;
   padding: 0;
 }
@@ -104,6 +104,14 @@ body {
 }
 .mat-radio-label {
   padding: 8px 12px 8px 8px;
+
+  @media screen and (max-width: 668px) {
+    max-width: 240px;
+    white-space: pre-line !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
 }
 .mat-radio-outer-circle {
   border-color: #469aa8;
@@ -125,4 +133,17 @@ body {
 .mat-form-field {
   max-width: 100%;
   width: 600px;
+  @media screen and (max-width: 668px) {
+    width: auto;
+  }
+}
+.mat-stepper-horizontal {
+  @media screen and (max-width: 668px) {
+    overflow: hidden;
+  }
+}
+.mat-horizontal-stepper-header-container {
+  @media screen and (max-width: 668px) {
+    overflow: scroll;
+  }
 }

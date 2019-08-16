@@ -34,6 +34,7 @@ export class MainComponent implements OnInit {
   fiveteenFormGroup: FormGroup;
   sixteenFormGroup: FormGroup;
   countryFormGroup: FormGroup;
+  personalFormGroup: FormGroup;
 
   countries: any = [];
   defaultCuntry: any = 'CO';
@@ -41,7 +42,7 @@ export class MainComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private mainService: MainService) {}
 
-  getResults() {
+  pushAnswers() {
     // Push de las respuestas al array
     this.results = {
       res_01: this.firstFormGroup.value.firstCtrl,
@@ -59,7 +60,10 @@ export class MainComponent implements OnInit {
       res_13: this.thirteenFormGroup.value.thirteenCtrl,
       res_14: this.fourteenFormGroup.value.fourteenCtrl,
       res_15: this.fiveteenFormGroup.value.fiveteenCtrl,
-      res_16: this.sixteenFormGroup.value.sixteenCtrl
+      res_16: this.sixteenFormGroup.value.sixteenCtrl,
+      conuntry: this.countryFormGroup.value.countryCtrl,
+      email: this.personalFormGroup.value.emailCtrl,
+      comment: this.personalFormGroup.value.commentCtrl
     };
 
     this.mainService.addAnswer(this.results);
@@ -131,6 +135,10 @@ export class MainComponent implements OnInit {
     });
     this.countryFormGroup = this._formBuilder.group({
       countryCtrl: ['', Validators.required]
+    });
+    this.personalFormGroup = this._formBuilder.group({
+      emailCtrl: ['', Validators.email],
+      commentCtrl: [''],
     });
   }
 }

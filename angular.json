@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "calculadora-angular": {
+    "encuesta-rrhh-latam": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/calculadora-angular",
+            "outputPath": "dist/encuesta-rrhh-latam",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "calculadora-angular:build"
+            "browserTarget": "encuesta-rrhh-latam:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "calculadora-angular:build:production"
+              "browserTarget": "encuesta-rrhh-latam:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "calculadora-angular:build"
+            "browserTarget": "encuesta-rrhh-latam:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "calculadora-angular-e2e": {
+    "encuesta-rrhh-latam-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "calculadora-angular:serve"
+            "devServerTarget": "encuesta-rrhh-latam:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "calculadora-angular:serve:production"
+              "devServerTarget": "encuesta-rrhh-latam:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "calculadora-angular"
+  "defaultProject": "encuesta-rrhh-latam"
 }

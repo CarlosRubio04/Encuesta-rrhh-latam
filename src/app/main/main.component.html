@@ -1,41 +1,6 @@
 <section class="Main">
   <div class="MainContainer">
     <mat-horizontal-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="countryFormGroup">
-        <div class="stepContainer">
-          <ng-template matStepLabel>País</ng-template>
-          <div class="stepHeader">
-            <div class="stepHeaderQues">
-              <h1>¿País?</h1>
-            </div>
-          </div>
-          <div class="stepForm">
-            <form [formGroup]="countryFormGroup">
-              <mat-form-field appearance="outline">
-                <mat-label>País</mat-label>
-                <mat-select [(value)]="defaultCuntry.country_code"
-                  color="primary"
-                  formControlName="countryCtrl"
-                >
-                  <mat-option
-                    *ngFor="let country of countries"
-                    [value]="country.alpha2Code"
-                  >
-                    {{ country.nativeName }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              
-            </form>
-          </div>
-          <div class="stepButtons">
-            <button mat-raised-button color="primary" matStepperNext>
-              Siguiente
-            </button>
-          </div>
-        </div>
-      </mat-step>
-
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>¿En qué área te desempeñas?</ng-template>
         <div class="stepContainer">
@@ -741,6 +706,76 @@
           </div>
         </div>
       </mat-step>
+
+      <mat-step [stepControl]="countryFormGroup">
+        <div class="stepContainer">
+          <ng-template matStepLabel>País</ng-template>
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>¿País?</h1>
+            </div>
+          </div>
+          <div class="stepForm">
+            <form [formGroup]="countryFormGroup">
+              <mat-form-field appearance="outline">
+                <mat-label>País</mat-label>
+                <mat-select
+                  [(value)]="defaultCuntry.country_code"
+                  color="primary"
+                  formControlName="countryCtrl"
+                >
+                  <mat-option
+                    *ngFor="let country of countries"
+                    [value]="country.alpha2Code"
+                  >
+                    {{ country.nativeName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </div>
+          <div class="stepButtons">
+            <button mat-raised-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="personalFormGroup">
+          <div class="stepContainer">
+            <ng-template matStepLabel>País</ng-template>
+            <div class="stepHeader">
+              <div class="stepHeaderQues">
+                <h1>¿Te gustaría recibir los datos de la encuanta?</h1>
+              </div>
+            </div>
+            <div class="stepForm">
+              <form [formGroup]="personalFormGroup">
+                <mat-form-field appearance="outline">
+                  <input
+                    matInput
+                    formControlName="emailCtrl"
+                    placeholder="Dejanos tu Email"
+                    value=""
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <textarea
+                    matInput
+                    placeholder="Dejanos un Comentario"
+                    formControlName="commentCtrl"
+                  ></textarea>
+                </mat-form-field>
+              </form>
+            </div>
+            <div class="stepButtons">
+              <button mat-raised-button color="primary" (click)="pushAnswers()">
+                Enviar respuestas
+              </button>
+            </div>
+          </div>
+        </mat-step>
     </mat-horizontal-stepper>
   </div>
 </section>
