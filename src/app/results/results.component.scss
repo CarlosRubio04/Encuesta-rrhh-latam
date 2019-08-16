@@ -1,0 +1,32 @@
+.Results {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../../assets/welcome_br.png), url(../../assets/welcome_tl.png), url(../../assets/welcome_tr.png);
+    background-position: right bottom, left -20px, right top;
+    background-size: 60%, 50%, 60%;
+    background-repeat: no-repeat;
+    
+    &Container {
+        width: 600px;
+        max-width: 100%;
+
+        h1 {
+            color: #131D32;
+            font-size: 36px;
+            font-weight: 100;
+        }
+        p {
+            color: #68708a;
+            font-weight: 200;
+            line-height: 1.8;
+
+            small {
+                font-weight: 600;
+                font-size: 12px;
+            }
+        }
+    }
+}

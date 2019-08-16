@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,12 +12,13 @@ export class MainService {
   API_IP_KEY: string = '7836a4acdb465320d4436d3ce4bfdd37f004278fd8a2aabb0c6cce9d';
   API_COUNTRIES: string = 'https://restcountries.eu/rest/v2';
 
-  constructor(private db: AngularFireDatabase, private http: HttpClient) { }
+  constructor(private db: AngularFireDatabase, private http: HttpClient, private router: Router) { }
 
   public addAnswer(data) {
     const ID = Date.now();
     this.db.database.ref('answers/' + ID).set(data)
       .then( (res) => {
+        this.router.navigate(['/results']);
         console.log(res);
       })
       .catch( (error) => {
