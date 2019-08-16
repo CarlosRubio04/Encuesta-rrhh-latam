@@ -36,6 +36,7 @@
           </div>
         </div>
       </mat-step>
+
       <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>¿Cuál es tu cargo?</ng-template>
         <div class="stepContainer">
@@ -74,6 +75,7 @@
           </div>
         </div>
       </mat-step>
+
       <mat-step [stepControl]="thirdFormGroup">
         <ng-template matStepLabel
           >¿En qué sector se desempeña tu empresa?</ng-template
@@ -117,6 +119,7 @@
           </div>
         </div>
       </mat-step>
+
       <mat-step [stepControl]="fourthFormGroup">
         <ng-template matStepLabel
           >¿Aproximadamente cuántos colaboradores trabajan en tu
@@ -743,39 +746,38 @@
       </mat-step>
 
       <mat-step [stepControl]="personalFormGroup">
-          <div class="stepContainer">
-            <ng-template matStepLabel>País</ng-template>
-            <div class="stepHeader">
-              <div class="stepHeaderQues">
-                <h1>¿Te gustaría recibir los datos de la encuanta?</h1>
-              </div>
-            </div>
-            <div class="stepForm">
-              <form [formGroup]="personalFormGroup">
-                <mat-form-field appearance="outline">
-                  <input
-                    matInput
-                    formControlName="emailCtrl"
-                    placeholder="Dejanos tu Email"
-                    value=""
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <textarea
-                    matInput
-                    placeholder="Dejanos un Comentario"
-                    formControlName="commentCtrl"
-                  ></textarea>
-                </mat-form-field>
-              </form>
-            </div>
-            <div class="stepButtons">
-              <button mat-raised-button color="primary" (click)="pushAnswers()">
-                Enviar respuestas
-              </button>
+        <div class="stepContainer">
+          <ng-template matStepLabel>País</ng-template>
+          <div class="stepHeader">
+            <div class="stepHeaderQues">
+              <h1>¿Te gustaría recibir los datos de la encuanta?</h1>
             </div>
           </div>
-        </mat-step>
+          <div class="stepForm">
+            <form [formGroup]="personalFormGroup">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  formControlName="emailCtrl"
+                  placeholder="Dejanos tu Email"
+                />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <textarea
+                  matInput
+                  placeholder="Dejanos un Comentario"
+                  formControlName="commentCtrl"
+                ></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+          <div class="stepButtons">
+            <button mat-raised-button color="primary" (click)="pushAnswers()">
+              Enviar respuestas
+            </button>
+          </div>
+        </div>
+      </mat-step>
     </mat-horizontal-stepper>
   </div>
 </section>

@@ -85,6 +85,8 @@ export class MainComponent implements OnInit {
       this.countries = data;
     });
 
+    const emailReg = window.sessionStorage.getItem('email');
+
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -137,7 +139,7 @@ export class MainComponent implements OnInit {
       countryCtrl: ['', Validators.required]
     });
     this.personalFormGroup = this._formBuilder.group({
-      emailCtrl: ['', Validators.email],
+      emailCtrl: [emailReg ? emailReg : '', Validators.email],
       commentCtrl: [''],
     });
   }

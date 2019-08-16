@@ -138,11 +138,13 @@ body {
   }
 }
 .mat-stepper-horizontal {
+  overflow: hidden;
   @media screen and (max-width: 668px) {
     overflow: hidden;
   }
 }
 .mat-horizontal-stepper-header-container {
+  overflow: scroll;
   @media screen and (max-width: 668px) {
     overflow: scroll;
   }
