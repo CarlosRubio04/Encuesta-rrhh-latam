@@ -12,7 +12,7 @@ export class MainService {
   API_IP_KEY: string = '7836a4acdb465320d4436d3ce4bfdd37f004278fd8a2aabb0c6cce9d';
   API_COUNTRIES: string = 'https://restcountries.eu/rest/v2';
 
-  RD_SERVICE_URL: string = 'https://www.acsendo.com/encuesta/rd_service/surve.php';
+  RD_SERVICE_URL: string = 'https://www.acsendo.com/encuesta/rd_service/survey.php';
 
   constructor(private db: AngularFireDatabase, private http: HttpClient, private router: Router) { }
 
@@ -41,7 +41,7 @@ export class MainService {
   }
 
   public sendSurveyView(email, id, message) {
-    this.http.get(`http://localhost:8888/encuesta_rrhh_latam/rd_service/survey.php?email=${email}&id=${id}&msg=${message}`)
+    this.http.get(`${this.RD_SERVICE_URL}?email=${email}&id=${id}&msg=${message}`)
       .subscribe( res => {
         console.log(res);
       });
