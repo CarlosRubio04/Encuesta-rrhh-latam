@@ -41,7 +41,9 @@ export class MainComponent implements OnInit {
   results: any = {};
 
   constructor(private _formBuilder: FormBuilder, private mainService: MainService) {}
-
+  sendView(email, msg) {
+    this.mainService.sendSurveyView(email, 'submit_survey_rrhh', msg);
+  }
   pushAnswers() {
     // Push de las respuestas al array
     this.results = {
@@ -67,6 +69,7 @@ export class MainComponent implements OnInit {
     };
 
     this.mainService.addAnswer(this.results);
+    this.results.email ? this.sendView(this.results.email, this.results.comment) : console.log('No email');
   }
 
   ngOnInit() {
@@ -136,7 +139,7 @@ export class MainComponent implements OnInit {
       sixteenCtrl: ['', Validators.required]
     });
     this.countryFormGroup = this._formBuilder.group({
-      countryCtrl: ['', Validators.required]
+      countryCtrl: ['']
     });
     this.personalFormGroup = this._formBuilder.group({
       emailCtrl: [emailReg ? emailReg : '', Validators.email],
