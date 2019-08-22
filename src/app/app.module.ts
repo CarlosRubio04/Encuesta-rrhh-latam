@@ -53,10 +53,11 @@ import {
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
+import { ReportComponent } from './report/report.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: ReportComponent },
   { path: 'dashboard', component: MainComponent },
   { path: 'results', component: ResultsComponent }
 ];
@@ -72,7 +73,7 @@ const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HomeComponent, ResultsComponent],
+  declarations: [AppComponent, MainComponent, HomeComponent, ResultsComponent, ReportComponent],
   imports: [
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),

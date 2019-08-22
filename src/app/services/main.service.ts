@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,32 @@ export class MainService {
   }
 
   public getAnswers() {
-    return this.db.list('answers');
+    return new Promise<any>((resolve, reject) => {
+      this.db.list('answers').valueChanges()
+        .subscribe(snapshots => {
+          resolve(snapshots);
+        });
+    });
+  }
+
+  public getAnswer(answer) {
+    return new Promise<any>((resolve, reject) => {
+      this.getAnswers()
+        .then( res => {
+          const arrAnswer = res.map((r) => r[answer]);
+          resolve(arrAnswer);
+        });
+    });
+  }
+
+  public getPeopleSurved() {
+    return new Promise<any>((resolve, reject) => {
+      this.getAnswers()
+        .then( res => {
+          const length = res.length;
+          resolve(length);
+        });
+    });
   }
 
   public findCountry () {

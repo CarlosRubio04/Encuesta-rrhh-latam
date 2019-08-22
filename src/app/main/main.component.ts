@@ -47,15 +47,15 @@ export class MainComponent implements OnInit {
   pushAnswers() {
     // Push de las respuestas al array
     this.results = {
-      res_01: this.firstFormGroup.value.firstCtrl,
-      res_02: this.secondFormGroup.value.secondCtrl,
-      res_03: this.thirdFormGroup.value.thirdCtrl,
-      res_04: this.fourthFormGroup.value.fourthCtrl,
-      res_05: this.fifthFormGroup.value.fifthCtrl,
-      res_06: this.sixFormGroup.value.sixCtrl,
-      res_07: this.sevenFormGroup.value.sevenCtrl,
-      res_08: this.eightFormGroup.value.eigthCtrl,
-      res_09: this.nineFormGroup.value.nineCtrl,
+      res_1: this.firstFormGroup.value.firstCtrl,
+      res_2: this.secondFormGroup.value.secondCtrl,
+      res_3: this.thirdFormGroup.value.thirdCtrl,
+      res_4: this.fourthFormGroup.value.fourthCtrl,
+      res_5: this.fifthFormGroup.value.fifthCtrl,
+      res_6: this.sixFormGroup.value.sixCtrl,
+      res_7: this.sevenFormGroup.value.sevenCtrl,
+      res_8: this.eightFormGroup.value.eigthCtrl,
+      res_9: this.nineFormGroup.value.nineCtrl,
       res_10: this.tenFormGroup.value.tenCtrl,
       res_11: this.elevenFormGroup.value.elevenCtrl,
       res_12: this.twelveFormGroup.value.twelveCtrl,
@@ -73,10 +73,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    const Response = this.mainService.getAnswers().valueChanges().subscribe((res) => {
-      console.log(res);
-    });
 
     const Country = this.mainService.findCountry().subscribe( (data) => {
       console.log(data);
