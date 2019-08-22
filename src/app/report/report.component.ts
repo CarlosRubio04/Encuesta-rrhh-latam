@@ -11,6 +11,7 @@ export class ReportComponent implements OnInit {
   PeopleSurveyed: number;
   arr_responses: any = [];
   frst_responses: any = [];
+  frst_labels: any = ['RRHH', 'Administración', 'Contabilidad y finanzas', 'Dirección', 'Ventas', 'Mercadeo', 'Otro'];
 
   ngOnInit() {
     this.mainService.getPeopleSurved().then(res => (this.PeopleSurveyed = res));

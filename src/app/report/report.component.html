@@ -3,7 +3,8 @@
         <h1>Reporte</h1>
         <p> {{ PeopleSurveyed }} personas encuestadas</p>
         <div *ngIf="frst_responses.length > 1">
-            <p *ngFor="let per of frst_responses; let i = index"> {{ i + 1}} respuesta: {{ per }} % </p>
+            <h4>¿En qué área te desempeñas?</h4>
+            <p *ngFor="let per of frst_responses; let i = index"> {{ frst_labels[i] }}: {{ per }} % </p>
         </div>
         <button (click)="arrOfFrstQes()">click</button>
     </div>
