@@ -1,0 +1,104 @@
+.Report {
+  position: relative;
+  background-image: url(../../assets/welcome_tl.png),
+    url(../../assets/welcome_tr.png);
+  background-position: left -20px, right top;
+  background-size: 60%, 50%, 60%;
+  background-repeat: no-repeat;
+
+  &Hero {
+    padding: 40px 0;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Container {
+      max-width: 500px;
+
+      &-logo {
+        max-width: 200px;
+        display: block;
+        margin: 0 auto;
+      }
+      &-intro {
+        font-weight: 200;
+        text-align: center;
+        margin-top: 30px;
+      }
+      &-btn {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  &Container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-people {
+      width: 600px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: 100;
+    }
+
+    &-item {
+      position: relative;
+      margin-bottom: 20px;
+      width: 700px;
+
+      .content {
+        position: relative;
+
+        h4 {
+          font-weight: 100;
+        }
+
+        .item {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          .label {
+            width: 40%;
+            text-align: right;
+            padding-right: 20px;
+          }
+          .bar {
+            width: 60%;
+
+            .per {
+              height: 20px;
+              padding: 6px 12px;
+              font-size: 14px;
+              background-color: #6ad3e3;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      color: #131d32;
+      font-size: 36px;
+      font-weight: 100;
+    }
+    p {
+      color: #68708a;
+      font-weight: 200;
+      line-height: 1.8;
+
+      small {
+        font-weight: 600;
+        font-size: 12px;
+      }
+    }
+  }
+}

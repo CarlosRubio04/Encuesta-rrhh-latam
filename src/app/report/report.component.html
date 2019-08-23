@@ -1,11 +1,60 @@
 <section class="Report">
-    <div class="ReportContainer">
-        <h1>Reporte</h1>
-        <p> {{ PeopleSurveyed }} personas encuestadas</p>
-        <div *ngIf="frst_responses.length > 1">
-            <h4>¿En qué área te desempeñas?</h4>
-            <p *ngFor="let per of frst_responses; let i = index"> {{ frst_labels[i] }}: {{ per }} % </p>
-        </div>
-        <button (click)="arrOfFrstQes()">click</button>
+  <div class="ReportHero">
+    <div class="ReportHeroContainer">
+      <img
+        src="https://www.acsendo.com/es/files/2017/04/Logo-Acsendo.png"
+        class="ReportHeroContainer-logo"
+        alt="Acsendo"
+      />
+      <p class="ReportHeroContainer-intro">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque beatae
+        blanditiis corporis autem fugiat, voluptates deserunt aperiam quibusdam
+        architecto ullam eius? Doloremque quam atque temporibus ipsam
+        necessitatibus numquam a exercitationem.
+      </p>
+      <button
+        mat-raised-button
+        color="primary"
+        class="ReportHeroContainer-btn"
+        (click)="viewReports()"
+      >
+        Obtener Datos
+      </button>
     </div>
+  </div>
+
+  <div class="ReportContainer">
+    <div class="ReportContainer-people">
+      <h4>{{ PeopleSurveyed }} personas encuestadas</h4>
+    </div>
+
+    <div class="ReportContainer-item">
+      <div *ngIf="Frst_responses.length > 1" class="content">
+        <h4>¿En qué área te desempeñas?</h4>
+        <div *ngFor="let per of Frst_responses; let i = index" class="item">
+          <div class="label">
+            <p>{{ Frst_labels[i] }}:</p>
+          </div>
+          <div class="bar">
+            <div class="per" [ngStyle]="{ width: per + '%' }">{{ per }} %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ReportContainer-item">
+      <div *ngIf="Scnd_responses.length > 1" class="content">
+        <h4>¿Cuál es tu cargo?</h4>
+        <div *ngFor="let per of Scnd_responses; let i = index" class="item">
+          <div class="label">
+            <p>{{ Scnd_labels[i] }}:</p>
+          </div>
+          <div class="bar">
+            <div class="per" [ngStyle]="{ width: per + '%' }">{{ per }} %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </section>

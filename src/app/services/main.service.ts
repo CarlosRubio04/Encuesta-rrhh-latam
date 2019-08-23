@@ -53,6 +53,7 @@ export class MainService {
       this.getAnswers()
         .then( res => {
           const length = res.length;
+          console.log(res);
           resolve(length);
         });
     });
