@@ -144,8 +144,18 @@ body {
   }
 }
 .mat-horizontal-stepper-header-container {
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
   @media screen and (max-width: 668px) {
     overflow: scroll;
   }
+}
+.mat-horizontal-stepper-header {
+  padding: 0 70px !important;
 }
