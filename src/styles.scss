@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -10,7 +10,6 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-
 $my-blue: (
   50: #f1f8ff,
   100: #ebf2ff,
@@ -21,7 +20,7 @@ $my-blue: (
   600: #68708a,
   700: #545c75,
   800: #353d55,
-  900: #131D32,
+  900: #131d32,
   contrast: (
     50: white,
     100: white,
@@ -32,10 +31,9 @@ $my-blue: (
     600: white,
     700: white,
     800: white,
-    900: white,
+    900: white
   )
 );
-
 
 $my-accent: (
   50: #e3f7fb,
@@ -58,29 +56,31 @@ $my-accent: (
     600: white,
     700: white,
     800: white,
-    900: white,
+    900: white
   )
 );
 
 // below creates a primary palette with three shades of blue
 $custom-theme-app: mat-palette($my-blue, 900);
-$custom-theme-app-accent:  mat-palette($my-accent, 500, 100, 400);
+$custom-theme-app-accent: mat-palette($my-accent, 500, 100, 400);
 
 // The warn palette is optional (defaults to red).
-$custom-theme-app-warn:    mat-palette($mat-red);
+$custom-theme-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$custom-theme-app-theme: mat-light-theme($custom-theme-app, $custom-theme-app-accent, $custom-theme-app-warn);
+$custom-theme-app-theme: mat-light-theme(
+  $custom-theme-app,
+  $custom-theme-app-accent,
+  $custom-theme-app-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($custom-theme-app-theme);
 
-
-
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #131d32;
   margin: 0;
   padding: 0;
@@ -93,7 +93,9 @@ body {
   background-color: transparent;
 }
 
-.mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover {
+.mat-step-header.cdk-keyboard-focused,
+.mat-step-header.cdk-program-focused,
+.mat-step-header:hover {
   background-color: transparent !important;
 }
 
@@ -104,13 +106,14 @@ body {
 }
 .mat-radio-label {
   padding: 8px 12px 8px 8px;
+  width: auto !important;
+  white-space: pre-line !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 
   @media screen and (max-width: 668px) {
     max-width: 240px;
-    white-space: pre-line !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
   }
 }
 .mat-radio-outer-circle {
@@ -125,6 +128,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.mat-radio-group-columns {
+  display: grid;
+  grid-template-columns: repeat( 2, minmax(150px, 1fr) );
+  grid-column-gap: 16px;
+  @media screen and (max-width: 668px) { 
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+  }
 }
 
 .mat-step-header .mat-step-label {
@@ -158,4 +170,8 @@ body {
 }
 .mat-horizontal-stepper-header {
   padding: 0 70px !important;
+
+ &:first-child {
+   padding-left: 30px !important;
+ }
 }

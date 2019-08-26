@@ -8,6 +8,11 @@
     background-position: right bottom, left -20px, right top;
     background-size: 60%, 50%, 60%;
     background-repeat: no-repeat;
+
+    @media screen and (max-width: 668px) {
+        padding: 10px 24px;
+        background-size: 50%, 100%, 100%;
+    }
     
     &Container {
         width: 600px;
